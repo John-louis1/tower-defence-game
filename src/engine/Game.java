@@ -17,12 +17,13 @@ public class Game extends JFrame{
 		importImg();
 		
 		setSize(640,640);
-		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		
-		screen = new GameScreen();
+		screen = new GameScreen(img);
 		add(screen);
+		setVisible(true);
+
+		
 	}
 
 	// methods
@@ -30,7 +31,7 @@ public class Game extends JFrame{
 		Game game = new Game();
 	}
 	
-	private void importImg() {
+	private void importImg() { // imports the image containing sprites 
 		InputStream is = getClass().getResourceAsStream("/spriteatlas.png");
 		try {
 			img = ImageIO.read(is);
